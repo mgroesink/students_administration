@@ -107,29 +107,38 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: ListView.builder(
                       itemCount: _students.length,
                       itemBuilder: (context, index) {
-                        return Card(
-                          margin: EdgeInsets.all(10),
-                          child: ListTile(
-                            leading: Text(
-                              (index + 1).toString(),
-                              style: TextStyle(
-                                  fontSize: 50.0, color: Colors.black87),
-                            ),
-                            tileColor:
-                                _students[index].Klas.codeUnitAt(4) % 2 == 0
-                                    ? Colors.redAccent
-                                    : Colors.blueAccent,
-                            subtitle: Text(
-                              _students[index].Klas,
-                              style: TextStyle(
-                                fontStyle: FontStyle.italic,
+                        return FlatButton(
+                          onPressed: (){
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) => StudentImage(url:
+                                  'https://th.bing.com/th/id/OIP.AywqK88V0S_yuyA3kjOMvwAAAA?pid=ImgDet&rs=1'
+                                ),),
+                            );
+                          },
+                          child: Card(
+                            margin: EdgeInsets.all(10),
+                            child: ListTile(
+                              leading: Text(
+                                (index + 1).toString(),
+                                style: TextStyle(
+                                    fontSize: 50.0, color: Colors.black87),
                               ),
-                            ),
-                            title: Text(
-                              _students[index].Naam,
-                              style: TextStyle(
-                                fontSize: 25.0,
-                                fontWeight: FontWeight.bold,
+                              tileColor:
+                                  _students[index].Klas.codeUnitAt(4) % 2 == 0
+                                      ? Colors.redAccent
+                                      : Colors.blueAccent,
+                              subtitle: Text(
+                                _students[index].Klas,
+                                style: TextStyle(
+                                  fontStyle: FontStyle.italic,
+                                ),
+                              ),
+                              title: Text(
+                                _students[index].Naam,
+                                style: TextStyle(
+                                  fontSize: 25.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ),
