@@ -2,8 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
-
 import 'package:studentsadministration/student.dart';
+
+import 'image_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -84,6 +85,14 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: const EdgeInsets.all(25),
         child: Column(
           children: [
+            FlatButton(
+              child: Text("Next page"),
+              onPressed: (){
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => StudentImage())
+                );
+              },
+            ),
             ElevatedButton(
               child: Text('Load Data'),
               onPressed: () async {
